@@ -99,7 +99,7 @@
         <h1>Willkommen!</h1>
         <p class="muted">Melde dich mit deinem Namen an. Ein Passwort gibt es nicht.
         ${Store.remoteOn ? "Mit demselben Namen siehst du deinen Fortschritt auf jedem Gerät." : "Dein Fortschritt wird in diesem Browser gespeichert."}</p>
-        ${users.length ? `<div class="known">${users.map((u) => `<span class="chip"><button class="chip-main" data-name="${esc(u.name)}">${esc(u.name)}</button><button class="chip-x" data-forget="${esc(u.key)}" title="Von diesem Gerät entfernen" aria-label="${esc(u.name)} entfernen">×</button></span>`).join("")}</div><p class="muted small">oder neuer Name:</p>` : ""}
+        ${users.length ? `<div class="known">${users.map((u) => `<span class="chip"><button class="chip-main" data-name="${esc(u.name)}">${esc(u.name)}</button><button class="chip-x" data-forget="${esc(u.key)}" title="Von diesem Gerät entfernen (Fortschritt in der Cloud bleibt)" aria-label="${esc(u.name)} entfernen">×</button></span>`).join("")}</div><p class="muted small">oder neuer Name:</p>` : ""}
         <form id="loginForm" class="row">
           <input id="nameInput" autocomplete="nickname" placeholder="Dein Name" maxlength="40" required>
           <button class="btn primary">Los geht's</button>

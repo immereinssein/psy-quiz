@@ -123,6 +123,7 @@
     },
     forget(key) {
       safeSet(LS_USERS, JSON.stringify(knownUsers().filter((u) => u.key !== key)));
+      try { localStorage.removeItem(lsKey(key)); } catch (e) {}
     },
     sync,
     topic(topicId) { return (data && data.topics[topicId]) || {}; },
